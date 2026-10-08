@@ -1,6 +1,6 @@
 /**
  * C.E.I.A.S - Colégio do Campo Irmã Ambrósia Sabatovich
- * Script Principal de Interatividade, Acessibilidade e Inteligência Artificial
+ * Interatividade de Abas, Expansão de Fotos em Notícias e Chat IA
  */
 
 let chatHistory = [];
@@ -31,7 +31,7 @@ function initHamburgerMenu() {
 }
 
 /* ==========================================================================
-   2. SISTEMA DE NAVEGAÇÃO POR ABAS SEPARADAS
+   2. SISTEMA DE ABAS SEPARADAS
    ========================================================================== */
 window.switchTab = function(event, tabId) {
   const allPanes = document.querySelectorAll('.tab-pane');
@@ -56,7 +56,24 @@ window.switchTab = function(event, tabId) {
 };
 
 /* ==========================================================================
-   3. FERRAMENTAS DE ACESSIBILIDADE
+   3. EXIBIÇÃO DE FOTO AO CLICAR NA NOTÍCIA/COMUNICADO
+   ========================================================================== */
+window.toggleNewsPhoto = function(cardElement) {
+  if (!cardElement) return;
+  cardElement.classList.toggle('active');
+
+  const hint = cardElement.querySelector('.click-hint');
+  if (hint) {
+    if (cardElement.classList.contains('active')) {
+      hint.innerText = 'Clique para ocultar a foto ❌';
+    } else {
+      hint.innerText = 'Clique para ver a foto 📸';
+    }
+  }
+};
+
+/* ==========================================================================
+   4. ACESSIBILIDADE
    ========================================================================== */
 window.toggleContrast = function() {
   document.body.classList.toggle('high-contrast');
@@ -67,12 +84,12 @@ window.adjustFont = function(direction) {
   fontScale += direction * 5;
   if (fontScale < 85) fontScale = 85;
   if (fontScale > 125) fontScale = 125;
-  
+
   document.body.style.fontSize = `${fontScale}%`;
 };
 
 /* ==========================================================================
-   4. FORMULÁRIO DE PRÉ-MATRÍCULA & WHATSAPP
+   5. ENVIO DE MATRÍCULA VIA WHATSAPP
    ========================================================================== */
 function initFormListeners() {
   const matInput = document.getElementById('matChatInput');
@@ -101,7 +118,7 @@ window.processMatricula = function(event) {
   if (!studentName || !grade || !parentName || !phone) return;
 
   const schoolPhone = "5500999998888";
-  const textMessage = `Olá! Gostaria de encaminhar a solicitação de pré-matrícula pública no *C.E.I.A.S*:%0A%0A` +
+  const textMessage = `Olá! Gostaria de enviar a solicitação de pré-matrícula pública no *C.E.I.A.S*:%0A%0A` +
                       `👤 *Aluno(a):* ${encodeURIComponent(studentName)}%0A` +
                       `📚 *Série Pretendida:* ${encodeURIComponent(grade)}%0A` +
                       `👨‍👩‍👧 *Responsável:* ${encodeURIComponent(parentName)}%0A` +
@@ -111,7 +128,7 @@ window.processMatricula = function(event) {
 };
 
 /* ==========================================================================
-   5. IA DA ABA DE MATRÍCULA (MINI ASSISTENTE)
+   6. IA DE MATRÍCULA E CHAT
    ========================================================================== */
 window.askMatriculaIA = function() {
   const input = document.getElementById('matChatInput');
@@ -124,21 +141,18 @@ window.askMatriculaIA = function() {
 
   setTimeout(() => {
     const qLower = question.toLowerCase();
-    let reply = "Para concluir a pré-matrícula, preencha os dados no formulário ao lado que nossa secretaria entrará em contato!";
+    let reply = "Para fazer a matrícula pública, preencha o formulário ao lado que nossa secretaria entrará em contato!";
 
     if (qLower.includes('doc') || qLower.includes('documento') || qLower.includes('trazer')) {
       reply = "📄 Documentos Necessários: RG/Certidão do aluno, CPF dos responsáveis, Comprovante de Residência rural e Histórico Escolar.";
     } else if (qLower.includes('paga') || qLower.includes('valor') || qLower.includes('custo')) {
-      reply = "🆓 O C.E.I.A.S é uma escola 100% pública e gratuita! Não há cobrança de taxas de matrícula.";
+      reply = "🆓 O C.E.I.A.S é uma escola 100% pública e gratuita!";
     }
 
     appendMessage(chatLogs, 'bot', reply);
   }, 500);
 };
 
-/* ==========================================================================
-   6. CHATBOT COMPLETO DA ESCOLA & ENCAMINHAMENTO WHATSAPP
-   ========================================================================== */
 window.sendMainChatMessage = function() {
   const input = document.getElementById('mainChatInput');
   const messageText = input?.value.trim();
@@ -151,12 +165,12 @@ window.sendMainChatMessage = function() {
 
   setTimeout(() => {
     const text = messageText.toLowerCase();
-    let botReply = "Entendido! Se quiser falar diretamente com a secretaria, clique no botão verde para enviar esta conversa para o WhatsApp oficial.";
+    let botReply = "Entendido! Se quiser falar diretamente com a equipe da escola, clique no botão verde abaixo para enviar esta conversa para o WhatsApp.";
 
     if (text.includes('horario') || text.includes('turnos')) {
       botReply = "⏰ Aulas no Matutino (07h30 às 11h50) e Vespertino (13h00 às 17h20).";
     } else if (text.includes('irma ambrosia') || text.includes('historia')) {
-      botReply = "⛪ Nossa escola possui origem em valores católicos em homenagem à Irmã Ambrósia Sabatovich, focando na valorização da vida no campo.";
+      botReply = "⛪ Nossa escola possui origem em valores católicos em homenagem à Irmã Ambrósia Sabatovich.";
     }
 
     appendMessage(chatLogs, 'bot', botReply);

@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>C.E.I.A.S - Colégio do Campo Irmã Ambrósia Sabatovich</title>
-  
-  <!-- Fontes de Alta Elegância -->
+
+  <!-- Tipografia de Alta Legibilidade e Alto Contraste -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- BARRA DE NAVEGAÇÃO SUPERIOR LUXO -->
+  <!-- BARRA DE NAVEGAÇÃO SUPERIOR -->
   <header class="navbar">
     <div class="logo-box">
       <div class="logo-badge">C.E.I.A.S</div>
@@ -31,7 +31,7 @@
       <span></span>
     </button>
 
-    <!-- LINKS DE NAVEGAÇÃO POR ABAS SEPARADAS -->
+    <!-- MENU DE ABAS SEPARADAS -->
     <nav class="nav-menu" id="navMenu">
       <button class="nav-link active" onclick="switchTab(event, 'historia')">Início & História</button>
       <button class="nav-link" onclick="switchTab(event, 'noticias')">Notícias & Eventos</button>
@@ -44,12 +44,11 @@
     </nav>
   </header>
 
-  <!-- CONTAINER PRINCIPAL -->
   <main class="main-container">
 
-    <!-- ACESSIBILIDADE FIXA -->
+    <!-- BARRA DE ACESSIBILIDADE FIXA -->
     <div class="accessibility-banner">
-      <span>♿ <strong>Portal com Acessibilidade Universal</strong></span>
+      <span>♿ <strong>Acessibilidade & Leitura Confortável</strong></span>
       <div class="acc-controls">
         <button onclick="toggleContrast()">🌗 Alto Contraste</button>
         <button onclick="adjustFont(1)">A+</button>
@@ -57,12 +56,12 @@
       </div>
     </div>
 
-    <!-- ABA PRINCIPAL (HOME): EXCLUSIVAMENTE A HISTÓRIA E A PATRONA IRMÃ AMBRÓSIA SABATOVICH -->
+    <!-- ABA 1: HISTÓRIA DA IRMÃ AMBRÓSIA SABATOVICH (HOME) -->
     <section id="historia" class="tab-pane active">
       <div class="hero-card">
         <span class="hero-badge">Página Principal</span>
         <h1>Nossa História, Origem e Legado</h1>
-        <p>Conheça a trajetória da nossa instituição pública, seus valores comunitários e a inspiração de nossa patrona.</p>
+        <p>Conheça a trajetória da nossa escola pública, seus valores comunitários e a dedicação da nossa patrona.</p>
       </div>
 
       <div class="history-wrapper">
@@ -95,35 +94,71 @@
       </div>
     </section>
 
-    <!-- ABA 2: NOTÍCIAS E EVENTOS SEPARADOS -->
+    <!-- ABA 2: NOTÍCIAS COM FOTOS INTERATIVAS AO CLICAR -->
     <section id="noticias" class="tab-pane">
       <div class="section-header">
         <h2>Notícias, Comunicados e Eventos</h2>
+        <p class="section-sub">Clique em qualquer comunicado abaixo para visualizar a foto do evento!</p>
         <div class="divider"></div>
       </div>
 
       <div class="grid-cards">
-        <article class="info-card">
-          <span class="card-tag">Evento Cultural</span>
+        
+        <!-- CARD NOTÍCIA 1 -->
+        <article class="info-card interactive-card" onclick="toggleNewsPhoto(this)">
+          <div class="card-header-row">
+            <span class="card-tag">Evento Cultural</span>
+            <span class="click-hint">Clique para ver a foto 📸</span>
+          </div>
           <h3>Feira do Conhecimento Sustentável 2026</h3>
           <p>Apresentação de projetos sustentáveis e agroecológicos desenvolvidos pelos alunos do Ensino Médio. Aberto a toda a comunidade rural.</p>
+          
+          <div class="news-photo-box">
+            <div class="news-photo-placeholder">
+              <span>🖼️ [Foto do Evento]: Alunos apresentando estande de horta agroecológica e energia solar</span>
+            </div>
+            <span class="photo-caption">Registro oficial da abertura da Feira de Ciências e Sustentabilidade.</span>
+          </div>
         </article>
 
-        <article class="info-card">
-          <span class="card-tag">Aviso Escolar</span>
+        <!-- CARD NOTÍCIA 2 -->
+        <article class="info-card interactive-card" onclick="toggleNewsPhoto(this)">
+          <div class="card-header-row">
+            <span class="card-tag">Aviso Escolar</span>
+            <span class="click-hint">Clique para ver a foto 📸</span>
+          </div>
           <h3>Reunião Geral de Pais e Entrega de Boletins</h3>
           <p>Convocação presencial para alinhamento de metas acadêmicas e acompanhamento individualizado de cada estudante.</p>
+
+          <div class="news-photo-box">
+            <div class="news-photo-placeholder">
+              <span>🖼️ [Foto do Evento]: Encontro com os pais e responsáveis no auditório principal</span>
+            </div>
+            <span class="photo-caption">Comunidade escolar reunida com a equipe pedagógica e direção.</span>
+          </div>
         </article>
 
-        <article class="info-card">
-          <span class="card-tag">Esporte & Saúde</span>
+        <!-- CARD NOTÍCIA 3 -->
+        <article class="info-card interactive-card" onclick="toggleNewsPhoto(this)">
+          <div class="card-header-row">
+            <span class="card-tag">Esporte & Saúde</span>
+            <span class="click-hint">Clique para ver a foto 📸</span>
+          </div>
           <h3>Torneio Interclasses na Quadra Coberta</h3>
           <p>Competições esportivas entre turmas do Fundamental II e Ensino Médio, promovendo a cooperação e o trabalho em equipe.</p>
+
+          <div class="news-photo-box">
+            <div class="news-photo-placeholder">
+              <span>🖼️ [Foto do Evento]: Time campeão do Ensino Médio na quadra poliesportiva</span>
+            </div>
+            <span class="photo-caption">Encerramento do torneio com entrega de medalhas aos times participantes.</span>
+          </div>
         </article>
+
       </div>
     </section>
 
-    <!-- ABA 3: ENSINO, DISCIPLINAS E ESTATÍSTICAS DETALHADAS -->
+    <!-- ABA 3: ENSINO E ESTATÍSTICAS DETALHADAS -->
     <section id="ensino" class="tab-pane">
       <div class="section-header">
         <h2>Matriz Curricular & Indicadores de Desempenho</h2>
@@ -405,7 +440,7 @@
           </ul>
         </div>
 
-        <!-- CHAT COMPLETO DE IA COM ENCAMINHAMENTO DE CONVERSA -->
+        <!-- CHAT COMPLETO DE IA -->
         <div class="chat-main-box">
           <div class="ia-header">
             <h3>🤖 Conversar com a IA da Escola</h3>
