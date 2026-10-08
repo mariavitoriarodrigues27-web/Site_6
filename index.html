@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>C.E.I.A.S - Colégio do Campo Irmã Ambrósia Sabatovich</title>
-
-  <!-- Tipografia de Alta Legibilidade e Alto Contraste -->
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -16,29 +15,26 @@
   <!-- BARRA DE NAVEGAÇÃO SUPERIOR -->
   <header class="navbar">
     <div class="logo-box">
-      <div class="logo-badge">C.E.I.A.S</div>
+      <img src="logo colegio.jpg" alt="Logo C.E.I.A.S" class="header-logo-img">
       <div class="logo-text">
-        <span class="logo-title">Colégio do Campo</span>
-        <span class="logo-subtitle">Irmã Ambrósia Sabatovich</span>
-        <span class="tag-publica">✦ Escola Pública Estadual</span>
+        <span class="logo-title">C.E.I.A.S</span>
+        <span class="logo-subtitle">Col. Est. do Campo Ir. Ambrósia Sabatovich</span>
+        <span class="logo-slogan">“Educando para a Comunidade”</span>
       </div>
     </div>
 
-    <!-- BOTÃO MENU HAMBÚRGUER -->
     <button class="hamburger" id="hamburgerBtn" aria-label="Abrir Menu">
       <span></span>
       <span></span>
       <span></span>
     </button>
 
-    <!-- MENU DE ABAS SEPARADAS -->
     <nav class="nav-menu" id="navMenu">
       <button class="nav-link active" onclick="switchTab(event, 'historia')">Início & História</button>
       <button class="nav-link" onclick="switchTab(event, 'noticias')">Notícias & Eventos</button>
       <button class="nav-link" onclick="switchTab(event, 'ensino')">Ensino & Estatísticas</button>
-      <button class="nav-link" onclick="switchTab(event, 'infraestrutura')">Infraestrutura</button>
-      <button class="nav-link" onclick="switchTab(event, 'galeria')">Fotos</button>
-      <button class="nav-link" onclick="switchTab(event, 'equipe')">Equipe & Depoimentos</button>
+      <button class="nav-link" onclick="switchTab(event, 'infraestrutura')">Infraestrutura & Fotos</button>
+      <button class="nav-link" onclick="switchTab(event, 'equipe')">Quadro de Funcionários</button>
       <button class="nav-link" onclick="switchTab(event, 'matricula')">Matrícula IA</button>
       <button class="nav-link" onclick="switchTab(event, 'contato')">Atendimento & Chat</button>
     </nav>
@@ -56,12 +52,17 @@
       </div>
     </div>
 
-    <!-- ABA 1: HISTÓRIA DA IRMÃ AMBRÓSIA SABATOVICH (HOME) -->
+    <!-- ABA 1: HISTÓRIA E PATRONA (HOME) -->
     <section id="historia" class="tab-pane active">
       <div class="hero-card">
-        <span class="hero-badge">Página Principal</span>
-        <h1>Nossa História, Origem e Legado</h1>
-        <p>Conheça a trajetória da nossa escola pública, seus valores comunitários e a dedicação da nossa patrona.</p>
+        <div class="hero-header-brand">
+          <img src="logo colegio.jpg" alt="Logo Oficial" class="hero-logo-img">
+          <div>
+            <span class="hero-badge">Escola Pública Estadual</span>
+            <h1>C.E.I.A.S - Educando para a Comunidade</h1>
+            <p>Ensino Fundamental (6º ao 9º) e Ensino Médio (1º ao 3º)</p>
+          </div>
+        </div>
       </div>
 
       <div class="history-wrapper">
@@ -80,85 +81,98 @@
 
           <p>A instituição foi batizada em homenagem à Irmã Ambrósia Sabatovich, cuja vida foi um exemplo de acolhimento, dedicação ao próximo, educação inclusiva e defesa incansável dos direitos e oportunidades para os jovens do campo.</p>
 
-          <p>Com o passar dos anos, a escola consolidou-se como uma <strong>instituição pública estadual</strong> de referência. Atualmente, o C.E.I.A.S preserva com orgulho essa herança espiritual e social, unindo a tradição de valores humanos à modernidade pedagógica e à sustentabilidade.</p>
+          <p>Como <strong>escola pública estadual</strong>, o C.E.I.A.S cumpre a missão expressa em seu lema: <em>“Educando para a Comunidade”</em>, unindo valores humanos, sustentabilidade e preparação acadêmica.</p>
 
           <div class="certificates-box">
             <h4>🏆 Certificados e Reconhecimentos Oficiais</h4>
             <ul>
-              <li>✦ Selo Estadual de Inclusão e Acessibilidade Plena</li>
-              <li>✦ Prêmio de Destaque em Projetos Pedagógicos e Agroecologia Escolar</li>
-              <li>✦ Certificação de Referência em Qualidade no Ensino do Campo</li>
+              <li>★ Selo Estadual de Inclusão e Acessibilidade Plena</li>
+              <li>★ Prêmio de Destaque em Projetos Pedagógicos e Agroecologia Escolar</li>
+              <li>★ Certificação de Referência em Qualidade no Ensino do Campo</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ABA 2: NOTÍCIAS COM FOTOS INTERATIVAS AO CLICAR -->
+    <!-- ABA 2: NOTÍCIAS E EVENTOS COM FOTOS AO CLICAR -->
     <section id="noticias" class="tab-pane">
       <div class="section-header">
         <h2>Notícias, Comunicados e Eventos</h2>
-        <p class="section-sub">Clique em qualquer comunicado abaixo para visualizar a foto do evento!</p>
+        <p class="section-sub">Clique em cima de cada notícia ou evento para abrir e visualizar a foto correspondente!</p>
         <div class="divider"></div>
       </div>
 
       <div class="grid-cards">
         
-        <!-- CARD NOTÍCIA 1 -->
         <article class="info-card interactive-card" onclick="toggleNewsPhoto(this)">
           <div class="card-header-row">
             <span class="card-tag">Evento Cultural</span>
-            <span class="click-hint">Clique para ver a foto 📸</span>
+            <span class="click-hint">Ver Foto 📸</span>
           </div>
-          <h3>Feira do Conhecimento Sustentável 2026</h3>
+          <h3>Feira do Conhecimento Sustentável do Campo 2026</h3>
           <p>Apresentação de projetos sustentáveis e agroecológicos desenvolvidos pelos alunos do Ensino Médio. Aberto a toda a comunidade rural.</p>
           
           <div class="news-photo-box">
             <div class="news-photo-placeholder">
-              <span>🖼️ [Foto do Evento]: Alunos apresentando estande de horta agroecológica e energia solar</span>
+              <span>🖼️ [Foto do Evento]: Alunos expondo maquetes de irrigação sustentável e hortas orgânicas</span>
             </div>
-            <span class="photo-caption">Registro oficial da abertura da Feira de Ciências e Sustentabilidade.</span>
+            <span class="photo-caption">Estande da Feira Cultural e Científica do C.E.I.A.S.</span>
           </div>
         </article>
 
-        <!-- CARD NOTÍCIA 2 -->
         <article class="info-card interactive-card" onclick="toggleNewsPhoto(this)">
           <div class="card-header-row">
             <span class="card-tag">Aviso Escolar</span>
-            <span class="click-hint">Clique para ver a foto 📸</span>
+            <span class="click-hint">Ver Foto 📸</span>
           </div>
           <h3>Reunião Geral de Pais e Entrega de Boletins</h3>
-          <p>Convocação presencial para alinhamento de metas acadêmicas e acompanhamento individualizado de cada estudante.</p>
+          <p>Convocação presencial para alinhamento de metas acadêmicas e acompanhamento pedagógico individualizado de cada estudante.</p>
 
           <div class="news-photo-box">
             <div class="news-photo-placeholder">
-              <span>🖼️ [Foto do Evento]: Encontro com os pais e responsáveis no auditório principal</span>
+              <span>🖼️ [Foto do Evento]: Auditório do colégio lotado com pais e professores</span>
             </div>
-            <span class="photo-caption">Comunidade escolar reunida com a equipe pedagógica e direção.</span>
+            <span class="photo-caption">Encontro comunitário entre a equipe pedagógica e os responsáveis.</span>
           </div>
         </article>
 
-        <!-- CARD NOTÍCIA 3 -->
         <article class="info-card interactive-card" onclick="toggleNewsPhoto(this)">
           <div class="card-header-row">
             <span class="card-tag">Esporte & Saúde</span>
-            <span class="click-hint">Clique para ver a foto 📸</span>
+            <span class="click-hint">Ver Foto 📸</span>
           </div>
           <h3>Torneio Interclasses na Quadra Coberta</h3>
-          <p>Competições esportivas entre turmas do Fundamental II e Ensino Médio, promovendo a cooperação e o trabalho em equipe.</p>
+          <p>Competições esportivas de futsal e voleibol entre turmas do Fundamental II e Ensino Médio, promovendo a cooperação e o esporte.</p>
 
           <div class="news-photo-box">
             <div class="news-photo-placeholder">
-              <span>🖼️ [Foto do Evento]: Time campeão do Ensino Médio na quadra poliesportiva</span>
+              <span>🖼️ [Foto do Evento]: Turmas reunidas na quadra coberta com medalhas</span>
             </div>
-            <span class="photo-caption">Encerramento do torneio com entrega de medalhas aos times participantes.</span>
+            <span class="photo-caption">Cerimônia de premiação dos jogos interclasses do C.E.I.A.S.</span>
+          </div>
+        </article>
+
+        <article class="info-card interactive-card" onclick="toggleNewsPhoto(this)">
+          <div class="card-header-row">
+            <span class="card-tag">Projeto Pedagógico</span>
+            <span class="click-hint">Ver Foto 📸</span>
+          </div>
+          <h3>Oficina de Informática e Inovação Digital</h3>
+          <p>Capacitação no Laboratório de Informática para criação de projetos digitais e uso de ferramentas de Inteligência Artificial.</p>
+
+          <div class="news-photo-box">
+            <div class="news-photo-placeholder">
+              <span>🖼️ [Foto do Evento]: Estantes e computadores do laboratório com alunos praticando</span>
+            </div>
+            <span class="photo-caption">Aula prática no Laboratório de Informática Acessível.</span>
           </div>
         </article>
 
       </div>
     </section>
 
-    <!-- ABA 3: ENSINO E ESTATÍSTICAS DETALHADAS -->
+    <!-- ABA 3: ENSINO E ESTATÍSTICAS -->
     <section id="ensino" class="tab-pane">
       <div class="section-header">
         <h2>Matriz Curricular & Indicadores de Desempenho</h2>
@@ -180,7 +194,6 @@
       <div class="stats-section">
         <h3>📊 Detalhamento de Rendimento Escolar (Aprovação, Reprovação e Abandono)</h3>
 
-        <!-- FUNDAMENTAL -->
         <div class="chart-card">
           <div class="chart-header">
             <h4>Ensino Fundamental II</h4>
@@ -224,7 +237,6 @@
           </div>
         </div>
 
-        <!-- MÉDIO -->
         <div class="chart-card">
           <div class="chart-header">
             <h4>Ensino Médio</h4>
@@ -267,97 +279,230 @@
       </div>
     </section>
 
-    <!-- ABA 4: INFRAESTRUTURA COMPLETA -->
+    <!-- ABA 4: INFRAESTRUTURA JUNTAMENTE COM O BANCO DE FOTOS INTERNAS E EXTERNAS -->
     <section id="infraestrutura" class="tab-pane">
       <div class="section-header">
-        <h2>Infraestrutura Modelo & Dependências</h2>
+        <h2>Infraestrutura Completa & Galeria de Fotos</h2>
+        <p class="section-sub">Conheça nossas dependências com acessibilidade total e a estrutura física do C.E.I.A.S</p>
         <div class="divider"></div>
       </div>
 
+      <!-- LISTA DE INFRAESTRUTURA -->
       <div class="infra-grid">
         <div class="infra-item"><span class="icon">♿</span> Escola Totalmente Acessível</div>
         <div class="infra-item"><span class="icon">🛗</span> Dependências com Acessibilidade</div>
-        <div class="infra-item"><span class="icon">🚾</span> Sanitários Adaptados com Acessibilidade</div>
+        <div class="infra-item"><span class="icon">𚡾</span> Sanitários Adaptados com Acessibilidade</div>
         <div class="infra-item"><span class="icon">🍎</span> Alimentação Escolar Fornecida (Merenda Nutritiva)</div>
         <div class="infra-item"><span class="icon">💧</span> Bebedouros com Água Filtrada em Todos os Blocos</div>
         <div class="infra-item"><span class="icon">🚽</span> Sanitários Internos Higienizados</div>
-        <div class="infra-item"><span class="icon">📚</span> Biblioteca com Acervo Completo e Cantinho da Leitura</div>
-        <div class="infra-item"><span class="icon">🍳</span> Cozinha Industrial Equipada</div>
+        <div class="infra-item"><span class="icon">📚</span> Biblioteca com Acervo Completo e Espaço de Leitura</div>
+        <div class="infra-item"><span class="icon">🍳</span> Cozinha Industrial e Refeitório</div>
         <div class="infra-item"><span class="icon">💻</span> Laboratório de Informática Conectado</div>
         <div class="infra-item"><span class="icon">🔬</span> Laboratório de Ciências e Biologia</div>
         <div class="infra-item"><span class="icon">⚽</span> Quadra de Esportes Coberta</div>
-        <div class="infra-item"><span class="icon">🏢</span> Sala da Diretoria e Equipe Pedagógica</div>
-      </div>
-    </section>
-
-    <!-- ABA 5: BANCO DE FOTOS SEPARADO -->
-    <section id="galeria" class="tab-pane">
-      <div class="section-header">
-        <h2>Banco de Fotos do Colégio</h2>
-        <div class="divider"></div>
+        <div class="infra-item"><span class="icon">🏢</span> Sala da Diretoria, Pedagogia e Secretaria</div>
       </div>
 
-      <div class="gallery-category">
-        <h3>🏛️ Fotos Internas e Externas</h3>
+      <!-- BANCO DE FOTOS INTERNAS E EXTERNAS -->
+      <div class="gallery-category-container">
+        <h3>🏛️ Fotos da Estrutura Externa</h3>
         <div class="gallery-grid">
-          <div class="photo-card">📷 Fachada Externa e Entrada do Colégio</div>
-          <div class="photo-card">📷 Pátio Central Arborizado</div>
+          <div class="photo-card">📷 Fachada Principal & Portaria de Acesso</div>
+          <div class="photo-card">📷 Pátio Central Arborizado & Convivência</div>
+          <div class="photo-card">📷 Quadra Poliesportiva Coberta</div>
+          <div class="photo-card">📷 Horta Escolar Agroecológica</div>
+        </div>
+
+        <h3>🏢 Fotos das Dependências Internas</h3>
+        <div class="gallery-grid">
           <div class="photo-card">📷 Laboratório de Informática</div>
-          <div class="photo-card">📷 Biblioteca Escolar</div>
-        </div>
-      </div>
-
-      <div class="gallery-category">
-        <h3>🎉 Registros de Eventos do Colégio</h3>
-        <div class="gallery-grid">
-          <div class="photo-card">📷 Feira do Conhecimento e Ciências</div>
-          <div class="photo-card">📷 Jogos Escolares Interclasses</div>
-          <div class="photo-card">📷 Apresentação Cultural e Festividades</div>
-          <div class="photo-card">📷 Formatura das Turmas do 3º Ano Médio</div>
+          <div class="photo-card">📷 Laboratório de Ciências e Biologia</div>
+          <div class="photo-card">📷 Biblioteca & Cantinho da Leitura</div>
+          <div class="photo-card">📷 Refeitório & Cozinha Industrial</div>
+          <div class="photo-card">📷 Salas de Aula Climatizadas e Acessíveis</div>
+          <div class="photo-card">📷 Sanitários Adaptados com Acessibilidade</div>
         </div>
       </div>
     </section>
 
-    <!-- ABA 6: EQUIPE E DEPOIMENTOS SEPARADOS -->
+    <!-- ABA 5: QUADRO DE FUNCIONÁRIOS COMPLETO COM MATÉRIAS E LOGOS/ÍCONES -->
     <section id="equipe" class="tab-pane">
       <div class="section-header">
-        <h2>Equipe Escolar & Depoimentos</h2>
+        <h2>Quadro Completo de Funcionários</h2>
+        <p class="section-sub">Conheça nossa equipe pedagógica, professores por disciplina e corpo administrativo</p>
         <div class="divider"></div>
       </div>
 
-      <div class="grid-cards">
-        <div class="info-card">
-          <h3>👩‍💼 Equipe Gestora e Administrativa</h3>
-          <ul class="clean-list">
-            <li><strong>Diretora Geral:</strong> Profa. Helena Maria de Souza</li>
-            <li><strong>Pedagogas:</strong> Profa. Clara Mendes e Profa. Renata Lima</li>
-            <li><strong>Secretaria Escolar:</strong> Marcos Vinícius e Juliana Rosa</li>
-          </ul>
-        </div>
+      <!-- QUADRO DE PROFESSORES COM LOGO/ÍCONE DE CADA MATÉRIA -->
+      <div class="staff-section">
+        <h3>👨‍🏫 Corpo Docente e Disciplinas Ofertadas</h3>
+        <div class="staff-grid">
+          
+          <div class="staff-card">
+            <div class="subject-badge bg-portugues">
+              <span class="subject-icon">📚</span>
+              <span>Língua Portuguesa & Literatura</span>
+            </div>
+            <h4>Profª. Ana Cláudia Silva</h4>
+            <p class="staff-role">Professora Titular • Ensino Fundamental e Médio</p>
+          </div>
 
-        <div class="info-card">
-          <h3>👨‍🏫 Corpo Docente</h3>
-          <p>Equipe qualificada de professores licenciados nas áreas de Linguagens, Matemática, Ciências da Natureza, Humanas e Educação do Campo.</p>
+          <div class="staff-card">
+            <div class="subject-badge bg-matematica">
+              <span class="subject-icon">📐</span>
+              <span>Matemática & Raciocínio Lógico</span>
+            </div>
+            <h4>Prof. Roberto Andrade</h4>
+            <p class="staff-role">Professor Titular • Ensino Fundamental e Médio</p>
+          </div>
+
+          <div class="staff-card">
+            <div class="subject-badge bg-ciencias">
+              <span class="subject-icon">🔬</span>
+              <span>Ciências, Biologia & Química</span>
+            </div>
+            <h4>Profª. Juliana Fernandes</h4>
+            <p class="staff-role">Professora Titular • Ensino Fundamental e Médio</p>
+          </div>
+
+          <div class="staff-card">
+            <div class="subject-badge bg-fisica">
+              <span class="subject-icon">⚡</span>
+              <span>Física & Tecnologias</span>
+            </div>
+            <h4>Prof. Marcos Vinícius Santos</h4>
+            <p class="staff-role">Professor Titular • Ensino Médio</p>
+          </div>
+
+          <div class="staff-card">
+            <div class="subject-badge bg-historia">
+              <span class="subject-icon">📜</span>
+              <span>História & Sociedade</span>
+            </div>
+            <h4>Prof. Eduardo Oliveira</h4>
+            <p class="staff-role">Professor Titular • Ensino Fundamental e Médio</p>
+          </div>
+
+          <div class="staff-card">
+            <div class="subject-badge bg-geografia">
+              <span class="subject-icon">🌍</span>
+              <span>Geografia & Estudo do Campo</span>
+            </div>
+            <h4>Profª. Mariana Costa</h4>
+            <p class="staff-role">Professora Titular • Ensino Fundamental e Médio</p>
+          </div>
+
+          <div class="staff-card">
+            <div class="subject-badge bg-ingles">
+              <span class="subject-icon">🇬🇧</span>
+              <span>Língua Inglesa</span>
+            </div>
+            <h4>Profª. Patricia Lima</h4>
+            <p class="staff-role">Professora Titular • Ensino Fundamental e Médio</p>
+          </div>
+
+          <div class="staff-card">
+            <div class="subject-badge bg-educacaofisica">
+              <span class="subject-icon">⚽</span>
+              <span>Educação Física & Esporte</span>
+            </div>
+            <h4>Prof. Lucas Ramos</h4>
+            <p class="staff-role">Professor Titular • Ensino Fundamental e Médio</p>
+          </div>
+
+          <div class="staff-card">
+            <div class="subject-badge bg-arte">
+              <span class="subject-icon">🎨</span>
+              <span>Arte & Expressão Cultural</span>
+            </div>
+            <h4>Profª. Beatriz Rocha</h4>
+            <p class="staff-role">Professora Titular • Ensino Fundamental e Médio</p>
+
+          </div>
+
+          <div class="staff-card">
+            <div class="subject-badge bg-filosofia">
+              <span class="subject-icon">🧠</span>
+              <span>Filosofia & Sociologia</span>
+            </div>
+            <h4>Prof. Fernando Alencar</h4>
+            <p class="staff-role">Professor Titular • Ensino Médio</p>
+          </div>
+
+          <div class="staff-card">
+            <div class="subject-badge bg-campo">
+              <span class="subject-icon">🚜</span>
+              <span>Projeto de Vida & Itinerários do Campo</span>
+            </div>
+            <h4>Profª. Camila Ribeiro</h4>
+            <p class="staff-role">Professora Especialista em Educação do Campo</p>
+          </div>
+
+          <div class="staff-card">
+            <div class="subject-badge bg-religioso">
+              <span class="subject-icon">🕊️</span>
+              <span>Ensino Religioso & Ética</span>
+            </div>
+            <h4>Profª. Tereza Sabatovich</h4>
+            <p class="staff-role">Professora Titular • Ensino Fundamental</p>
+          </div>
+
         </div>
       </div>
 
+      <!-- EQUIPE GESTORA E ADMINISTRATIVA -->
+      <div class="management-section">
+        <h3>👩‍💼 Equipe Gestora, Pedagogia e Apoio</h3>
+        <div class="staff-grid">
+          
+          <div class="staff-card border-blue">
+            <div class="subject-badge bg-gestao">
+              <span class="subject-icon">🏛️</span>
+              <span>Direção Geral</span>
+            </div>
+            <h4>Profª. Helena Maria de Souza</h4>
+            <p class="staff-role">Diretora Escolar</p>
+          </div>
+
+          <div class="staff-card border-blue">
+            <div class="subject-badge bg-gestao">
+              <span class="subject-icon">📋</span>
+              <span>Equipe Pedagógica</span>
+            </div>
+            <h4>Profª. Clara Mendes & Profª. Renata Lima</h4>
+            <p class="staff-role">Pedagogas Responsáveis</p>
+          </div>
+
+          <div class="staff-card border-blue">
+            <div class="subject-badge bg-gestao">
+              <span class="subject-icon">📁</span>
+              <span>Secretaria Escolar</span>
+            </div>
+            <h4>Marcos Vinícius & Juliana Rosa</h4>
+            <p class="staff-role">Secretários Administrativos</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- DEPOIMENTOS -->
       <div class="testimonials-container">
         <h3>💬 Depoimentos de Professores e Ex-Alunos</h3>
         <div class="grid-cards">
           <blockquote class="testimonial-card">
-            <p>"Lecionar no C.E.I.A.S é uma experiência enriquecedora. A integração da comunidade do campo com a escola fortalece o aprendizado diário."</p>
+            <p>"Lecionar no C.E.I.A.S é ver diariamente o lema 'Educando para a Comunidade' ganhar vida nas salas de aula e no campo."</p>
             <cite>— Prof. Roberto Andrade (Matemática)</cite>
           </blockquote>
 
           <blockquote class="testimonial-card">
-            <p>"Estudar no Colégio Irmã Ambrósia me deu toda a base necessária para ingressar na universidade pública. Tenho um carinho enorme por esta instituição!"</p>
+            <p>"A formação que recebi no Colégio Irmã Ambrósia abriu as portas para a universidade pública. Tenho um orgulho enorme da nossa escola!"</p>
             <cite>— Ana Beatriz Santos (Ex-aluna, Turma 2024)</cite>
           </blockquote>
         </div>
       </div>
     </section>
 
-    <!-- ABA 7: MATRÍCULA ESPECIAL COM IA AUXILIAR -->
+    <!-- ABA 6: MATRÍCULA COM IA -->
     <section id="matricula" class="tab-pane">
       <div class="section-header">
         <h2>Aba Especial de Pré-Matrícula Escolar</h2>
@@ -403,7 +548,6 @@
           <button type="submit" class="btn-primary">Enviar Matrícula via WhatsApp da Secretaria</button>
         </form>
 
-        <!-- ASSISTENTE DE IA PARA AJUDA NA MATRÍCULA -->
         <div class="ia-helper-box">
           <div class="ia-header">
             <h3>🤖 IA Auxiliar de Matrícula</h3>
@@ -421,7 +565,7 @@
       </div>
     </section>
 
-    <!-- ABA 8: MEIO DE CONTATO, LOCALIZAÇÃO & CHAT COMPLETO IA -->
+    <!-- ABA 7: CONTATO, LOCALIZAÇÃO & CHAT IA -->
     <section id="contato" class="tab-pane">
       <div class="section-header">
         <h2>Meios de Contato, Localização & Atendimento com IA</h2>
@@ -432,15 +576,15 @@
         <div class="contact-card">
           <h3>📍 Informações Oficiais</h3>
           <ul class="contact-list">
-            <li><strong>Instituição Pública Estadual:</strong> C.E.I.A.S</li>
-            <li><strong>Endereço:</strong> Estrada Principal do Campo, Km 12 - Zona Rural</li>
+            <li><strong>Instituição:</strong> Colégio Estadual do Campo Irmã Ambrósia Sabatovich</li>
+            <li><strong>Lema:</strong> “Educando para a Comunidade”</li>
+            <li><strong>Endereço:</strong> Colônia Marcelino, São José dos Pinhais - PR</li>
             <li><strong>WhatsApp da Secretaria:</strong> (00) 99999-8888</li>
             <li><strong>Gmail Oficial:</strong> ceias.colegio.campo@gmail.com</li>
             <li><strong>Horário de Atendimento:</strong> Segunda a Sexta, das 07h30 às 17h00</li>
           </ul>
         </div>
 
-        <!-- CHAT COMPLETO DE IA -->
         <div class="chat-main-box">
           <div class="ia-header">
             <h3>🤖 Conversar com a IA da Escola</h3>

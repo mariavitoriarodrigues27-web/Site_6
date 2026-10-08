@@ -1,6 +1,6 @@
 /**
  * C.E.I.A.S - Colégio do Campo Irmã Ambrósia Sabatovich
- * Interatividade de Abas, Expansão de Fotos em Notícias e Chat IA
+ * Script de Interatividade, Expansão de Fotos e Atendimento Virtual
  */
 
 let chatHistory = [];
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   1. MENU NAVEGAÇÃO & HAMBÚRGUER (MOBILE)
+   1. MENU HAMBÚRGUER RESPONSIVO
    ========================================================================== */
 function initHamburgerMenu() {
   const hamburgerBtn = document.getElementById('hamburgerBtn');
@@ -31,7 +31,7 @@ function initHamburgerMenu() {
 }
 
 /* ==========================================================================
-   2. SISTEMA DE ABAS SEPARADAS
+   2. SISTEMA DE NAVEGAÇÃO ENTRE ABAS
    ========================================================================== */
 window.switchTab = function(event, tabId) {
   const allPanes = document.querySelectorAll('.tab-pane');
@@ -56,7 +56,7 @@ window.switchTab = function(event, tabId) {
 };
 
 /* ==========================================================================
-   3. EXIBIÇÃO DE FOTO AO CLICAR NA NOTÍCIA/COMUNICADO
+   3. EXPANSÃO DE FOTO AO CLICAR EM CADA NOTÍCIA OU EVENTO
    ========================================================================== */
 window.toggleNewsPhoto = function(cardElement) {
   if (!cardElement) return;
@@ -65,15 +65,15 @@ window.toggleNewsPhoto = function(cardElement) {
   const hint = cardElement.querySelector('.click-hint');
   if (hint) {
     if (cardElement.classList.contains('active')) {
-      hint.innerText = 'Clique para ocultar a foto ❌';
+      hint.innerText = 'Ocultar Foto ❌';
     } else {
-      hint.innerText = 'Clique para ver a foto 📸';
+      hint.innerText = 'Ver Foto 📸';
     }
   }
 };
 
 /* ==========================================================================
-   4. ACESSIBILIDADE
+   4. FERRAMENTAS DE ACESSIBILIDADE
    ========================================================================== */
 window.toggleContrast = function() {
   document.body.classList.toggle('high-contrast');
@@ -118,7 +118,7 @@ window.processMatricula = function(event) {
   if (!studentName || !grade || !parentName || !phone) return;
 
   const schoolPhone = "5500999998888";
-  const textMessage = `Olá! Gostaria de enviar a solicitação de pré-matrícula pública no *C.E.I.A.S*:%0A%0A` +
+  const textMessage = `Olá! Gostaria de enviar a solicitação de pré-matrícula pública no *C.E.I.A.S* (%22Educando para a Comunidade%22):%0A%0A` +
                       `👤 *Aluno(a):* ${encodeURIComponent(studentName)}%0A` +
                       `📚 *Série Pretendida:* ${encodeURIComponent(grade)}%0A` +
                       `👨‍👩‍👧 *Responsável:* ${encodeURIComponent(parentName)}%0A` +
@@ -128,7 +128,7 @@ window.processMatricula = function(event) {
 };
 
 /* ==========================================================================
-   6. IA DE MATRÍCULA E CHAT
+   6. INTELIGÊNCIA ARTIFICIAL E CHAT
    ========================================================================== */
 window.askMatriculaIA = function() {
   const input = document.getElementById('matChatInput');
@@ -141,7 +141,7 @@ window.askMatriculaIA = function() {
 
   setTimeout(() => {
     const qLower = question.toLowerCase();
-    let reply = "Para fazer a matrícula pública, preencha o formulário ao lado que nossa secretaria entrará em contato!";
+    let reply = "Para fazer a matrícula pública no C.E.I.A.S, preencha o formulário ao lado que nossa secretaria entrará em contato!";
 
     if (qLower.includes('doc') || qLower.includes('documento') || qLower.includes('trazer')) {
       reply = "📄 Documentos Necessários: RG/Certidão do aluno, CPF dos responsáveis, Comprovante de Residência rural e Histórico Escolar.";
@@ -170,7 +170,7 @@ window.sendMainChatMessage = function() {
     if (text.includes('horario') || text.includes('turnos')) {
       botReply = "⏰ Aulas no Matutino (07h30 às 11h50) e Vespertino (13h00 às 17h20).";
     } else if (text.includes('irma ambrosia') || text.includes('historia')) {
-      botReply = "⛪ Nossa escola possui origem em valores católicos em homenagem à Irmã Ambrósia Sabatovich.";
+      botReply = "⛪ Nossa escola possui origem em valores católicos em homenagem à Irmã Ambrósia Sabatovich e com o lema 'Educando para a Comunidade'.";
     }
 
     appendMessage(chatLogs, 'bot', botReply);
