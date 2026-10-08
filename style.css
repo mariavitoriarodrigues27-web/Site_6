@@ -1,4 +1,4 @@
-/* CORES OFICIAIS BASEADAS NA LOGO DO C.E.I.A.S (AZUL, VERMELHO, AMARELO E BRANCO) */
+/* CORES BASEADAS NA LOGO DA ESCOLA (AZUL ROYAL, VERMELHO, AMARELO E BRANCO) */
 :root {
   --ceias-blue: #004ea8;
   --ceias-dark-blue: #003375;
@@ -95,7 +95,7 @@ body {
   font-weight: 800;
 }
 
-/* NAVEGAÇÃO POR ABAS */
+/* NAVEGAÇÃO */
 .nav-menu {
   display: flex;
   gap: 6px;
@@ -209,7 +209,7 @@ body {
   color: var(--ceias-blue);
 }
 
-/* HERO DA PÁGINA PRINCIPAL */
+/* HERO DA HOME */
 .hero-card {
   background: linear-gradient(135deg, #e8f2fe 0%, #ffffff 100%);
   border-left: 6px solid var(--ceias-blue);
@@ -270,7 +270,7 @@ body {
   margin: 10px 0 20px;
 }
 
-/* NOTÍCIAS INTERATIVAS (FOTO EXPANDÍVEL) */
+/* NOTÍCIAS COM FOTO TOTALMENTE ESCONDIDA ATÉ O CLIQUE */
 .interactive-card {
   cursor: pointer;
   user-select: none;
@@ -299,17 +299,15 @@ body {
   border-radius: 8px;
 }
 
+/* FOTO OCULTA POR PADRÃO (display: none) */
 .news-photo-box {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.4s ease-out, opacity 0.3s ease, margin-top 0.3s ease;
+  display: none;
+  margin-top: 15px;
 }
 
+/* QUANDO CLICADO, A FOTO PASSA A SER EXIBIDA */
 .interactive-card.active .news-photo-box {
-  max-height: 350px;
-  opacity: 1;
-  margin-top: 15px;
+  display: block;
 }
 
 .news-photo-placeholder {

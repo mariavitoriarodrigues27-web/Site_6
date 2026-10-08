@@ -56,7 +56,7 @@ window.switchTab = function(event, tabId) {
 };
 
 /* ==========================================================================
-   3. EXPANSÃO DE FOTO AO CLICAR EM CADA NOTÍCIA OU EVENTO
+   3. REVELA A FOTO DO EVENTO SOMENTE AO CLICAR EM CIMA DA NOTÍCIA
    ========================================================================== */
 window.toggleNewsPhoto = function(cardElement) {
   if (!cardElement) return;
@@ -67,13 +67,13 @@ window.toggleNewsPhoto = function(cardElement) {
     if (cardElement.classList.contains('active')) {
       hint.innerText = 'Ocultar Foto ❌';
     } else {
-      hint.innerText = 'Ver Foto 📸';
+      hint.innerText = 'Clique para ver a foto 📸';
     }
   }
 };
 
 /* ==========================================================================
-   4. FERRAMENTAS DE ACESSIBILIDADE
+   4. ACESSIBILIDADE
    ========================================================================== */
 window.toggleContrast = function() {
   document.body.classList.toggle('high-contrast');
